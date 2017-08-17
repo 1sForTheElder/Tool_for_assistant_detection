@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="the_Largest_AnchorPane" prefHeight="1000.0" prefWidth="1182.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TheController">
+   <children>
+      <AnchorPane fx:id="the_Second_Largest_AnchorPane" prefHeight="1000.0" prefWidth="1182.0">
+         <children>
+            <MenuBar prefHeight="25.0" prefWidth="1182.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="MenuBar_btn_Source_File" mnemonicParsing="false" onAction="#Click_MenuBar_btn_Source_File" text="Source File" />
+                        <MenuItem fx:id="MenuBar_btn_Directory" mnemonicParsing="false" onAction="#Click_MenuBar_btn_Directory" text="Source Directory" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="menuItem_Undo" mnemonicParsing="false" onAction="#Click_menuItem_Undo" text="Undo" />
+                        <MenuItem fx:id="menuItem_Redo" mnemonicParsing="false" onAction="#Click_menuItem_Redo" text="Redo" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Pane layoutY="25.0" prefHeight="144.0" prefWidth="1182.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="84.0" prefHeight="25.0" prefWidth="65.0" text="File:" />
+                  <Label layoutX="32.0" layoutY="115.0" prefHeight="25.0" prefWidth="65.0" text="Directory:" />
+                  <Button fx:id="btn_UpLoadSourceFile" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_UpLoadSourceFile" text="Upload Source File" />
+                  <Button fx:id="btn_UpLoadDirectory" alignment="TOP_LEFT" layoutX="32.0" layoutY="49.0" mnemonicParsing="false" onAction="#Click_btn_UpLoadDirectory" prefHeight="23.0" prefWidth="124.0" text="Upload Directory" />
+                  <Label fx:id="lbl_SourceFile" layoutX="106.0" layoutY="85.0" prefHeight="23.0" prefWidth="424.0" />
+                  <Label fx:id="lbl_directory" layoutX="106.0" layoutY="116.0" onMouseClicked="#Click_LblDirectory" prefHeight="23.0" prefWidth="424.0" />
+                  <ProgressBar fx:id="TheProgressBar" layoutX="730.0" layoutY="73.0" prefHeight="47.0" prefWidth="231.0" progress="0.0" />
+                  <Label fx:id="TaskName_For_ProgressBar" layoutX="651.0" layoutY="76.0" prefHeight="41.0" prefWidth="45.0" text="Process" />
+                  <Label fx:id="Done_For_ProgressBar" layoutX="969.0" layoutY="76.0" prefHeight="41.0" prefWidth="199.0" />
+                  <Label layoutX="651.0" layoutY="15.0" prefHeight="25.0" prefWidth="158.0" text="Please select a language" />
+                  <Button fx:id="btn_Clean_Language_Choose" layoutX="1113.0" layoutY="14.0" mnemonicParsing="false" onAction="#click_btn_Clean_Language_Choose" text="Reset" />
+                  <ToolBar fx:id="ToolBar_For_Radio_language_Button" layoutX="825.0" layoutY="7.0" prefHeight="40.0" prefWidth="282.0">
+                     <items>
+                        <RadioButton fx:id="Radio_Java" mnemonicParsing="false" onAction="#click_Radio_Java" text="Java" />
+                        <RadioButton fx:id="Radio_C_Cplus" mnemonicParsing="false" onAction="#click_Radio_C_Cplus" text="C/C++ Language" />
+                        <RadioButton fx:id="Radio_Python" mnemonicParsing="false" onAction="#click_Radio_Python" text="Python" />
+                     </items>
+                     <opaqueInsets>
+                        <Insets right="10.0" />
+                     </opaqueInsets>
+                  </ToolBar>
+               </children>
+            </Pane>
+            <Button fx:id="bnt_TotalCheck" layoutX="1037.0" layoutY="901.0" mnemonicParsing="false" onAction="#Click_bnt_TotalCheck" prefHeight="23.0" prefWidth="131.0" text="Generate Report" />
+            <Accordion fx:id="Accordion_Main" layoutY="169.0" prefHeight="650.0" prefWidth="1182.0">
+              <panes>
+                <TitledPane fx:id="AccMain_Pane_Source_File" animated="false" expanded="false" text="Source File">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="603.0" prefWidth="838.0">
+                                 <content>
+                                    <HTMLEditor fx:id="htmlEditor" prefHeight="580.0" prefWidth="833.0" />
+                                 </content>
+                              </ScrollPane>
+                              <ScrollPane layoutX="838.0" prefHeight="603.0" prefWidth="344.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="578.0" prefWidth="344.0">
+                                       <children>
+                                          <Button fx:id="btn_Addtohighlight" alignment="TOP_LEFT" layoutX="168.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Addtohighlight" prefHeight="23.0" prefWidth="113.0" text="Highlight" />
+                                          <Button fx:id="btn_CreateNewPart" alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#click_btn_CreateNewPart" prefHeight="23.0" prefWidth="124.0" text="Create part" />
+                                          <Accordion fx:id="Accordion_SourceFileParts" layoutX="17.0" layoutY="130.0" prefHeight="397.0" prefWidth="303.0" />
+                                          <MenuButton fx:id="MenuButton_Color" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="124.0" text="Colour scheme">
+                                            <items>
+                                              <MenuItem fx:id="MenuButton_Color_1" mnemonicParsing="false" text="Auto Colour" />
+                                              <MenuItem fx:id="MenuButton_Color_2" mnemonicParsing="false" text="Select by hand" />
+                                            </items>
+                                          </MenuButton>
+                                          <MenuButton fx:id="Menu_ChooseAPart" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="124.0" text="Choose a part" />
+                                          <MenuButton fx:id="TheColorPicker" layoutX="168.0" layoutY="89.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="114.0" text="MenuButton">
+                                             <items>
+                                                <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                                                   <content>
+                                                      <AnchorPane fx:id="ColorPickerContainer" prefHeight="258.0" prefWidth="310.0" />
+                                                   </content>
+                                                </CustomMenuItem>
+                                             </items>
+                                          </MenuButton>
+                                          <Button fx:id="btn_select_All_Parts" layoutX="17.0" layoutY="541.0" mnemonicParsing="false" onAction="#Click_btn_select_All_Parts" prefHeight="23.0" prefWidth="111.0" text="Select all parts" />
+                                          <Button fx:id="btn_clean_All_Parts" layoutX="166.0" layoutY="541.0" mnemonicParsing="false" onAction="#Click_btn_clean_All_Parts" prefHeight="23.0" prefWidth="111.0" text="Clean all parts" />
+                                       </children></AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                  <TitledPane fx:id="AccMain_Pane_Directory_Files" animated="false" expanded="false" text="Directory Files">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="3.0" layoutY="53.0" prefHeight="525.0" prefWidth="1176.0">
+                                 <content>
+                                    <GridPane fx:id="DirectoryGridPane" prefHeight="505.0" prefWidth="1181.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints maxHeight="475.0" minHeight="10.0" prefHeight="471.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <SplitPane fx:id="Directory_SplitPane" dividerPositions="0.8627118644067797" prefHeight="53.0" prefWidth="1182.0">
+                                <items>
+                                    <AnchorPane prefHeight="51.0" prefWidth="1042.0">
+                                       <children>
+                                          <Button fx:id="btn_Directory_Search" layoutX="846.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Directory_Search" text="Search" />
+                                          <TextField fx:id="txt_Directory_Search" layoutX="578.0" layoutY="14.0" prefHeight="23.0" prefWidth="235.0" />
+                                          <Button fx:id="btn_Directory_SelectAll" layoutX="30.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Directory_SelectAll" text="Select All" />
+                                          <Button fx:id="btn_Directory_ClearAll" layoutX="139.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Directory_ClearAll" text="Clear All" />
+                                          <Button fx:id="btn_Directory_Cancel" layoutX="937.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Directory_Cancel" text="Cancel" />
+                                          <Label fx:id="lbl_Directory_number_of_files" layoutX="254.0" layoutY="14.0" prefHeight="23.0" prefWidth="189.0" text="Number of files included: " />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Button fx:id="btn_Generate_Report_Directory" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Click_btn_Generate_Report_Directory" prefHeight="23.0" prefWidth="124.0" text="Generate Report" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane fx:id="AccMain_Pane_Check_Report" animated="false" expanded="false" text="Check Report">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="180.0" prefWidth="1182.0">
+                                 <content>
+                                    <GridPane fx:id="Report_GridPane" prefHeight="45.0" prefWidth="1181.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                              <AnchorPane fx:id="AnchorPane_For_reports" layoutY="182.0" prefHeight="398.0" prefWidth="1182.0">
+                                 <children>
+                                    <WebView fx:id="WebView1" prefHeight="398.0" prefWidth="1182.0" />
+                                 </children></AnchorPane>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

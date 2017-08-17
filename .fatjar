@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Aug 17 00:09:52 BST 2017
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=projectFinalss.jar
+manifest.mergeall=true
+manifest.mainclass=application.Main
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
